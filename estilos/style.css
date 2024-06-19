@@ -125,6 +125,7 @@ nav {
   font-weight: bold;
   color: #2ecc71;
 }
+/*Nabvar*/
 .nav-links {
   display: flex;
   justify-content: space-around;
@@ -137,6 +138,15 @@ nav {
 
 .nav-links a {
   color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.6s;
+}
+
+.nav-links li a:hover {
+  color: yellow;
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -155,7 +165,27 @@ nav {
   margin: 5px;
   transition: all 0.3s ease;
 }
+/*wave*/
+.custom-shape-divider-bottom-1718765718 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
 
+.custom-shape-divider-bottom-1718765718 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 120px;
+}
+
+.custom-shape-divider-bottom-1718765718 .shape-fill {
+  fill: #FFFFFF;
+}
+/*Responsive*/
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 60%;

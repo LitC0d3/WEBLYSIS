@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    scroll-behavior: smooth;
+    overflow: hidden;
+    scrollbar-width: none; /* Ocultar la barra de desplazamiento en Firefox */
+    -ms-overflow-style: none; /* Ocultar la barra de desplazamiento en IE/Edge */
+}
+
+::-webkit-scrollbar {
+    display: none; /* Ocultar la barra de desplazamiento en Chrome y Safari */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main {
+    scroll-snap-type: y mandatory; 
+    height: calc(100vh - 56px); 
+    overflow-y: scroll;
+}
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.one {
+    background-color: #f4a261;
+}
+.two {
+    background-color: #50c9df;
+}
+.three {
+    background-color: #f693ff;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}

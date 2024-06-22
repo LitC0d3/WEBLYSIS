@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weblysis</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
     <link rel="stylesheet" href="Recursos/Css/style.css">
 </head>
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Logo</a>
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 p-3">
+            <a class="navbar-brand" href="weblysis.html">
+                <img src="Recursos/Img/Basic/weblysis_logo.png" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#section1">Sección 1</a>
+                        <a class="nav-link" href="#section1">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section2">Sección 2</a>
+                        <a class="nav-link" href="#section2">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section3">Sección 3</a>
+                        <a class="nav-link" href="#section3">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section4">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -32,12 +39,26 @@
     </header>
 
     <main>
-        <section id="section1" class="section one">Sección 1</section>
+        <section id="section1" class="section one">
+            <div class="container">
+                <div class="presentacion">
+                    <div class="custom-shape-divider-bottom-1718765718">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                        </svg>
+                    </div>
+                </div>
+              </div>
+        </section>
+
         <section id="section2" class="section two">Sección 2</section>
         <section id="section3" class="section three">Sección 3</section>
+        <section id="section4" class="section four">Sección 4</section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer id="pageFooter">
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -46,6 +67,32 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var footer = document.getElementById('pageFooter');
+            var main = document.querySelector('main');
+
+            // mostrar u ocultar el footer dependiendo de la posición del scroll
+            function toggleFooterVisibility() {
+                var lastSection = main.lastElementChild;
+                var lastSectionRect = lastSection.getBoundingClientRect();
+
+                // Mostrar el footer si el final del último elemento es visible
+                if (lastSectionRect.bottom <= window.innerHeight) {
+                    footer.style.bottom = '0';
+                } else {
+                    footer.style.bottom = '-60px'; // Ocultar el footer fuera de la vista
+                }
+            }
+
+            // actualizar la visibilidad del footer
+            main.addEventListener('scroll', toggleFooterVisibility);
+
+            // inicializar el footer
+            toggleFooterVisibility();
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

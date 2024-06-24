@@ -34,47 +34,19 @@ main {
     scroll-snap-align: start;
 }
 
-.one {
-    background-color: #0d1738;
-    position: relative; 
-}
-
-/*wraper*/
-.custom-shape-divider-bottom-1718765718 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-bottom-1718765718 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 180px;
-}
-
-.custom-shape-divider-bottom-1718765718 .shape-fill {
-    fill: #FFFFFF;
-}
-
-
 .two {
-    background-color: #fff;
+    background-color: #38b1f7;
 }
 .three {
-    background-color: #fff;
+    background-color: #a8db1a;
 }
 .four {
-    background-color: #fff;
+    background-color: rgb(171, 25, 201);
 }
 
 footer {
     background-color: white;
     color: #333;
-    padding: 20px 0;
     text-align: center;
     width: 100%;
     position: fixed;

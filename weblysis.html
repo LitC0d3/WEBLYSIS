@@ -61,7 +61,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="pageFooter">
+    <footer id="pageFooter" class="pt-5">
         
         <div class="container">
             <div class="row p-0">
@@ -71,8 +71,36 @@
             </div>
         </div>
     </footer>
-
+<!--MEJORA DE SCRIPT-->
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var footer = document.getElementById('pageFooter');
+            var main = document.querySelector('main');
+            var lastScrollTop = 0;
+
+            function toggleFooterVisibility() {
+                var lastSection = main.lastElementChild;
+                var lastSectionRect = lastSection.getBoundingClientRect();
+                var currentScroll = main.scrollTop;
+
+                // Mostrar el footer si el final del último elemento es visible
+                if (lastSectionRect.bottom <= window.innerHeight) {
+                    footer.style.display = 'block';
+                } else if (currentScroll < lastScrollTop) {
+                    // Ocultar el footer si se hace scroll hacia arriba
+                    footer.style.display = 'none';
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            }
+
+            main.addEventListener('scroll', toggleFooterVisibility);
+
+            toggleFooterVisibility();
+        });
+    </script>
+
+    <!--<script>
         document.addEventListener('DOMContentLoaded', function() {
             var footer = document.getElementById('pageFooter');
             var main = document.querySelector('main');
@@ -86,7 +114,7 @@
                 if (lastSectionRect.bottom <= window.innerHeight) {
                     footer.style.bottom = '0';
                 } else {
-                    footer.style.bottom = '-60px'; // Ocultar el footer
+                    footer.style.bottom = '-350px'; // Ocultar el footer
                 }
             }
 
@@ -96,7 +124,7 @@
             // inicializar el footer
             toggleFooterVisibility();
         });
-    </script>
+    </script>-->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
